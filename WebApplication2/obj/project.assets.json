@@ -4586,11 +4586,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gunel\\source\\repos\\WebApplication2\\WebApplication2\\WebApplication2.csproj",
+      "projectUniqueName": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\WebApplication2.csproj",
       "projectName": "WebApplication2",
-      "projectPath": "C:\\Users\\gunel\\source\\repos\\WebApplication2\\WebApplication2\\WebApplication2.csproj",
+      "projectPath": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\WebApplication2.csproj",
       "packagesPath": "C:\\Users\\gunel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gunel\\source\\repos\\WebApplication2\\WebApplication2\\obj\\",
+      "outputPath": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
