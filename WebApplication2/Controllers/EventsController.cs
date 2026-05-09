@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using WebApplication2.Data;
 using WebApplication2.Dtos.EventDtos;
 using WebApplication2.Dtos.TicketDtos;
+using WebApplication2.Extensions;
 using WebApplication2.Models;
 
 namespace WebApplication2.Controllers
@@ -12,16 +13,18 @@ namespace WebApplication2.Controllers
     [Route("api/events")]
     public class EventsController(ApiAppDbContext apiAppDbContext,IMapper mapper) : ControllerBase
     {
-       public async Task<IActionResult> GetAllEvents()
+        [HttpGet]
+        public async Task<IActionResult> GetAllEvents()
        {
            var events = await apiAppDbContext.Events
                 .Include(e => e.Organizer)
                 .ToListAsync();
-           return Ok(events);
+            var eventDtos=mapper.Map<List<EventReturnDto>>(events);
+            return Ok(eventDtos);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(EventCreateDto dto)
+        public async Task<IActionResult> Post(EventCreateDto dto)
         {
             var ev = mapper.Map<Event>(dto);
             apiAppDbContext.Events.Add(ev);
@@ -32,48 +35,66 @@ namespace WebApplication2.Controllers
         [HttpPost("{id}/banner")]
         public async Task<IActionResult> UploadBanner(int id, IFormFile file)
         {
+            if (file == null)
+                return BadRequest("File is required");
+
+            if (!file.IsImage())
+                return BadRequest("Only image files are allowed");
+
+            if (!file.IsValidSize(2)) 
+                return BadRequest("File size must be less than 2MB");
+
             var ev = await apiAppDbContext.Events.FindAsync(id);
-            if (ev == null) return NotFound("Event not found");
+            if (ev == null)
+                return NotFound("Event not found");
 
-            var fileName = Guid.NewGuid() + Path.GetExtension(file.FileName);
-            var path = Path.Combine("wwwroot/images", fileName);
+            string rootPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images");
 
-            using (var stream = new FileStream(path, FileMode.Create))
-            {
-                await file.CopyToAsync(stream);
-            }
+           
+            string fileName = await file.SaveFileAsync(rootPath);
 
             ev.BannerImageUrl = fileName;
+
             await apiAppDbContext.SaveChangesAsync();
 
-            return Ok(new { message = "Banner uploaded", file = fileName });
+            return Ok(new
+            {
+                message = "Banner uploaded",
+                file = fileName
+            });
         }
 
         [HttpGet("{eventId}/tickets")]
-        public async Task<IActionResult> GetTickets(int eventId)
+        public async Task<IActionResult> GetTicketsByEvent(int eventId)
         {
+            var eventExists = await apiAppDbContext.Events.AnyAsync(e => e.Id == eventId);
+            if (!eventExists) return NotFound("Event not found");
+
             var tickets = await apiAppDbContext.Tickets
                 .Where(t => t.EventId == eventId)
                 .ToListAsync();
 
             return Ok(tickets);
         }
+
         [HttpGet("{eventId}/organizer")]
-        public async Task<IActionResult> GetOrganizer(int eventId)
+        public async Task<IActionResult> GetOrganizerByEvent(int eventId)
         {
-            var ev = await apiAppDbContext.Events
+                var ev = await apiAppDbContext.Events
                 .Include(e => e.Organizer)
                 .FirstOrDefaultAsync(e => e.Id == eventId);
 
-            if (ev == null) return NotFound();
+            if (ev == null) return NotFound("Event not found");
+            if (ev.Organizer == null) return NotFound("Organizer not found");
 
             return Ok(ev.Organizer);
         }
+
         [HttpPost("{eventId}/tickets")]
-        public async Task<IActionResult> CreateTicket(int eventId, TicketCreateDto dto)
+        public async Task<IActionResult> CreateTicketForEvent(int eventId, TicketCreateDto dto)
         {
-            var ev = await apiAppDbContext.Events.FindAsync(eventId);
-            if (ev == null) return NotFound("Event not found");
+            var eventExists = await apiAppDbContext.Events.AnyAsync(e => e.Id == eventId);
+            if (!eventExists) return NotFound("Event not found");
 
             var ticket = new Ticket
             {

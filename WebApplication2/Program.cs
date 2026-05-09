@@ -1,25 +1,29 @@
+using ApiProjectPractise;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using WebApplication2.Data;
 
 var builder = WebApplication.CreateBuilder(args);
+var config = builder.Configuration;
+builder.Services.AddServices(config);
 
 // Add services to the container.
-
-builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
-var config = builder.Configuration;
-
-builder.Services.AddDbContext<ApiAppDbContext>(options =>
-options.UseSqlServer(config.GetConnectionString("DefaultConnection")));
-
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
+else
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
+// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+
+// Configure the HTTP request pipeline.
 
 app.UseStaticFiles();
 app.UseHttpsRedirection();
@@ -27,5 +31,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.MapGet("/", () => Results.Redirect("/swagger/index.html")).ExcludeFromDescription();
 
 app.Run();
