@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebApplication2.Data;
 using WebApplication2.Dtos.EventDtos;
+using WebApplication2.Dtos.OrganizerDtos;
 using WebApplication2.Dtos.TicketDtos;
 using WebApplication2.Extensions;
 using WebApplication2.Models;
@@ -73,8 +74,9 @@ namespace WebApplication2.Controllers
             var tickets = await apiAppDbContext.Tickets
                 .Where(t => t.EventId == eventId)
                 .ToListAsync();
+            var ticketDtos = mapper.Map<List<TicketReturnDto>>(tickets);
 
-            return Ok(tickets);
+            return Ok(ticketDtos);
         }
 
         [HttpGet("{eventId}/organizer")]
@@ -86,8 +88,9 @@ namespace WebApplication2.Controllers
 
             if (ev == null) return NotFound("Event not found");
             if (ev.Organizer == null) return NotFound("Organizer not found");
+            var organizerDto = mapper.Map<OrganizerReturnDto>(ev.Organizer);
 
-            return Ok(ev.Organizer);
+            return Ok(organizerDto);
         }
 
         [HttpPost("{eventId}/tickets")]

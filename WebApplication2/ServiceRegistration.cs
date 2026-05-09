@@ -15,7 +15,7 @@ namespace ApiProjectPractise
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
             services.AddHttpContextAccessor();
-            services.AddAutoMapper(cfg => cfg.AddProfile<MapperProfile>());
+            services.AddAutoMapper(opt => opt.AddProfile(new MapperProfile(new HttpContextAccessor())));
         }
     }
 }
