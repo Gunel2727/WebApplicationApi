@@ -25,9 +25,9 @@ namespace WebApplication2.Profiles
                
             CreateMap<TicketCreateDto,Ticket>();
             CreateMap<OrganizerCreateDto, Organizer>();
-                
 
-            CreateMap<Organizer, OrganizerReturnDto>()
+
+            CreateMap<Organizer, OrganizerReturnDto>();
                  
             CreateMap<Organizer, OrganizerInEventDto>();
 
