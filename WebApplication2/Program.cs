@@ -36,3 +36,4 @@ app.MapGet("/", () => Results.Redirect("/swagger/index.html")).ExcludeFromDescri
 
 app.Run();
 Console.WriteLine("Hello, World!");
+Console.WriteLine("This is a simple ASP.NET Core Web API application.");
