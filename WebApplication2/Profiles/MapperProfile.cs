@@ -3,6 +3,7 @@ using System;
 using WebApplication2.Dtos.EventDtos;
 using WebApplication2.Dtos.OrganizerDtos;
 using WebApplication2.Dtos.TicketDtos;
+using WebApplication2.Dtos.UserDtos;
 using WebApplication2.Extensions;
 using WebApplication2.Models;
 
@@ -22,7 +23,8 @@ namespace WebApplication2.Profiles
             var url = uribuilder.Uri.AbsoluteUri;
 
             CreateMap<EventCreateDto, Event>();
-               
+                
+
             CreateMap<TicketCreateDto,Ticket>();
             CreateMap<OrganizerCreateDto, Organizer>();
 
@@ -34,13 +36,26 @@ namespace WebApplication2.Profiles
             // Ticket mappings
             CreateMap<Ticket, TicketReturnDto>()
                 .ForMember(dest => dest.Event, opt => opt.MapFrom(src => src.Event));
+
             CreateMap<Event, EventInTicketDto>();
 
             // Event mappings
             CreateMap<Event, EventReturnDto>()
-                .ForMember(dest => dest.Organizer, opt => opt.MapFrom(src => src.Organizer));
-                
-            CreateMap<Event, EventInOrganizerDto>();
+             .ForMember(dest => dest.Organizer,
+                 opt => opt.MapFrom(src => src.Organizer))
+
+             .ForMember(dest => dest.BannerImageUrl,
+                 opt => opt.MapFrom(src =>
+                     url + "images/" + src.BannerImageUrl));
+
+            CreateMap<Event, EventInOrganizerDto>()
+              .ForMember(dest => dest.BannerImageUrl,
+                  opt => opt.MapFrom(src =>
+                      src.BannerImageUrl != null
+                      ? url + src.BannerImageUrl
+                      : null));
+
+            CreateMap<RegisterDto, AppUser>();
 
 
         }

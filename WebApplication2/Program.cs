@@ -26,8 +26,8 @@ else
 // Configure the HTTP request pipeline.
 
 app.UseStaticFiles();
-app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
@@ -35,5 +35,3 @@ app.MapControllers();
 app.MapGet("/", () => Results.Redirect("/swagger/index.html")).ExcludeFromDescription();
 
 app.Run();
-Console.WriteLine("Hello, World!");
-Console.WriteLine("This is a simple ASP.NET Core Web API application.");
