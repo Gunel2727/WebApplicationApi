@@ -29,9 +29,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "email",
-        "Type": "System.String",
-        "IsRequired": false
+        "Name": "dto",
+        "Type": "WebApplication2.Dtos.ForgotPasswordDto",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -60,6 +60,22 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApplication2.Controllers.AccountController",
+    "Method": "RefreshToken",
+    "RelativePath": "api/Account/refresh-token",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "WebApplication2.Dtos.RefreshTokenDto",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {

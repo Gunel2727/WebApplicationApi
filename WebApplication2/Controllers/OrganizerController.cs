@@ -63,7 +63,13 @@ namespace WebApplication2.Controllers
 
             organizer.LogoUrl = await file.SaveFileAsync(rootPath);
             await apiAppDbContext.SaveChangesAsync();
-            return Ok(new { message = "Logo uploaded", file = organizer.LogoUrl });
+            return Ok(new
+            {
+                message = "Logo uploaded",
+                fileName = organizer.LogoUrl,
+                path = $"/images/{organizer.LogoUrl}",
+                url = $"{Request.Scheme}://{Request.Host}/images/{organizer.LogoUrl}"
+            });
         }
 
         [HttpGet("{organizerId}/events")]

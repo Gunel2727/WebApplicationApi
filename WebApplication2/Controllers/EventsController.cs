@@ -61,7 +61,9 @@ namespace WebApplication2.Controllers
             return Ok(new
             {
                 message = "Banner uploaded",
-                file = fileName
+                fileName = fileName,
+                path = $"/images/{fileName}",
+                url = $"{Request.Scheme}://{Request.Host}/images/{fileName}"
             });
         }
 

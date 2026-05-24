@@ -148,5 +148,5 @@ C:\Users\gunel\OneDrive\Desktop\WebApplicationApi\WebApplication2\obj\Debug\net8
 C:\Users\gunel\OneDrive\Desktop\WebApplicationApi\WebApplication2\bin\Debug\net8.0\WebApplication2.staticwebassets.runtime.json
 C:\Users\gunel\OneDrive\Desktop\WebApplicationApi\WebApplication2\obj\Debug\net8.0\swae.build.ex.cache
 C:\Users\gunel\OneDrive\Desktop\WebApplicationApi\WebApplication2\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-C:\Users\gunel\OneDrive\Desktop\WebApplicationApi\WebApplication2\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\gunel\OneDrive\Desktop\WebApplicationApi\WebApplication2\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\gunel\OneDrive\Desktop\WebApplicationApi\WebApplication2\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
