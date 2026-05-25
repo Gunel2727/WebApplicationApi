@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{BF33D930-5D93-41B7-B4B5-6FE912F5571D}|WebApplication2\\WebApplication2.csproj|c:\\users\\gunel\\onedrive\\desktop\\webapplicationapi\\webapplication2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF33D930-5D93-41B7-B4B5-6FE912F5571D}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BF33D930-5D93-41B7-B4B5-6FE912F5571D}|WebApplication2\\WebApplication2.csproj|c:\\users\\gunel\\onedrive\\desktop\\webapplicationapi\\webapplication2\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BF33D930-5D93-41B7-B4B5-6FE912F5571D}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -42,11 +46,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\Program.cs",
+              "RelativeDocumentMoniker": "WebApplication2\\Program.cs",
+              "ToolTip": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\Program.cs",
+              "RelativeToolTip": "WebApplication2\\Program.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAAACYAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-25T19:50:01.556Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "JwtService.cs",
               "DocumentMoniker": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\Services\\JwtService.cs",
               "RelativeDocumentMoniker": "WebApplication2\\Services\\JwtService.cs",
@@ -54,12 +71,11 @@
               "RelativeToolTip": "WebApplication2\\Services\\JwtService.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAAwA4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-24T09:15:38.985Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-24T09:15:38.985Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "OrganizerControllerTests.cs",
               "DocumentMoniker": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\TestWebProject\\OrganizerControllerTests.cs",
               "RelativeDocumentMoniker": "TestWebProject\\OrganizerControllerTests.cs",
@@ -67,12 +83,11 @@
               "RelativeToolTip": "TestWebProject\\OrganizerControllerTests.cs",
               "ViewState": "AgIAAGEAAAAAAAAAAAD4v1YAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-24T08:15:33.53Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-24T08:15:33.53Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "EventsController.cs",
               "DocumentMoniker": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\Controllers\\EventsController.cs",
               "RelativeDocumentMoniker": "WebApplication2\\Controllers\\EventsController.cs",
@@ -80,25 +95,24 @@
               "RelativeToolTip": "WebApplication2\\Controllers\\EventsController.cs",
               "ViewState": "AgIAAC0AAAAAAAAAAAAwwEIAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-24T07:43:59.266Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-24T07:43:59.266Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "AccountController.cs",
               "DocumentMoniker": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "WebApplication2\\Controllers\\AccountController.cs",
               "ToolTip": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\Controllers\\AccountController.cs",
               "RelativeToolTip": "WebApplication2\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAADEAAAAAAAAAAAAQwFEAAABFAAAAAAAAAA==",
+              "ViewState": "AgIAALwAAAAAAAAAAAAwwFEAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-24T07:25:44.064Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "OrganizerController.cs",
               "DocumentMoniker": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\Controllers\\OrganizerController.cs",
               "RelativeDocumentMoniker": "WebApplication2\\Controllers\\OrganizerController.cs",
@@ -106,38 +120,35 @@
               "RelativeToolTip": "WebApplication2\\Controllers\\OrganizerController.cs",
               "ViewState": "AgIAADQAAAAAAAAAAAAwwEcAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-24T08:07:54.283Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-24T08:07:54.283Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "TestWebProject",
+              "DocumentIndex": 6,
+              "Title": "TestWebProject.csproj",
               "DocumentMoniker": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\TestWebProject\\TestWebProject.csproj",
               "RelativeDocumentMoniker": "TestWebProject\\TestWebProject.csproj",
               "ToolTip": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\TestWebProject\\TestWebProject.csproj",
               "RelativeToolTip": "TestWebProject\\TestWebProject.csproj",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAABIAAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-05-24T08:13:47.518Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-24T08:13:47.518Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "WebApplication2",
+              "DocumentIndex": 7,
+              "Title": "WebApplication2.csproj",
               "DocumentMoniker": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\WebApplication2.csproj",
               "RelativeDocumentMoniker": "WebApplication2\\WebApplication2.csproj",
               "ToolTip": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\WebApplication2.csproj",
               "RelativeToolTip": "WebApplication2\\WebApplication2.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-05-24T08:17:26.771Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-24T08:17:26.771Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "MapperProfile.cs",
               "DocumentMoniker": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\Profiles\\MapperProfile.cs",
               "RelativeDocumentMoniker": "WebApplication2\\Profiles\\MapperProfile.cs",
@@ -145,8 +156,7 @@
               "RelativeToolTip": "WebApplication2\\Profiles\\MapperProfile.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-24T08:20:01.568Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-24T08:20:01.568Z"
             }
           ]
         }
