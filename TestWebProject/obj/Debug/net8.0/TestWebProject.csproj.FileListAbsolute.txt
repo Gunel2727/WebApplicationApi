@@ -162,3 +162,5 @@ C:\Users\gunel\OneDrive\Desktop\WebApplicationApi\TestWebProject\obj\Debug\net8.
 C:\Users\gunel\OneDrive\Desktop\WebApplicationApi\TestWebProject\obj\Debug\net8.0\TestWebProject.pdb
 C:\Users\gunel\OneDrive\Desktop\WebApplicationApi\TestWebProject\obj\Debug\net8.0\TestWebProject.genruntimeconfig.cache
 C:\Users\gunel\OneDrive\Desktop\WebApplicationApi\TestWebProject\obj\Debug\net8.0\ref\TestWebProject.dll
+C:\Users\gunel\OneDrive\Desktop\WebApplicationApi\TestWebProject\bin\Debug\net8.0\Castle.Core.dll
+C:\Users\gunel\OneDrive\Desktop\WebApplicationApi\TestWebProject\bin\Debug\net8.0\Moq.dll

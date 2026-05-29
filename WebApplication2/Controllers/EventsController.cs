@@ -7,29 +7,25 @@ using WebApplication2.Dtos.OrganizerDtos;
 using WebApplication2.Dtos.TicketDtos;
 using WebApplication2.Extensions;
 using WebApplication2.Models;
+using WebApplication2.Services.Interfaces;
 
 namespace WebApplication2.Controllers
 {
     [ApiController]
     [Route("api/events")]
-    public class EventsController(ApiAppDbContext apiAppDbContext,IMapper mapper) : ControllerBase
+    public class EventsController(IEventService eventService,ApiAppDbContext apiAppDbContext) : ControllerBase
     {
         [HttpGet]
         public async Task<IActionResult> GetAllEvents()
-       {
-           var events = await apiAppDbContext.Events
-                .Include(e => e.Organizer)
-                .ToListAsync();
-            var eventDtos=mapper.Map<List<EventReturnDto>>(events);
-            return Ok(eventDtos);
+        {
+            var events = await eventService.GetAllEventsAsync();
+            return Ok(events);
         }
 
         [HttpPost]
         public async Task<IActionResult> Post(EventCreateDto dto)
         {
-            var ev = mapper.Map<Event>(dto);
-            apiAppDbContext.Events.Add(ev);
-            await apiAppDbContext.SaveChangesAsync();
+            var ev = await eventService.CreateEventAsync(dto);
             return Ok(ev);
         }
 
@@ -70,51 +66,26 @@ namespace WebApplication2.Controllers
         [HttpGet("{eventId}/tickets")]
         public async Task<IActionResult> GetTicketsByEvent(int eventId)
         {
-            var eventExists = await apiAppDbContext.Events.AnyAsync(e => e.Id == eventId);
-            if (!eventExists) return NotFound("Event not found");
-
-            var tickets = await apiAppDbContext.Tickets
-                .Where(t => t.EventId == eventId)
-                .ToListAsync();
-            var ticketDtos = mapper.Map<List<TicketReturnDto>>(tickets);
-
-            return Ok(ticketDtos);
+            var tickets = await eventService.GetTicketsByEventAsync(eventId);
+            if (tickets is null) return NotFound("Event not found");
+            return Ok(tickets);
         }
 
         [HttpGet("{eventId}/organizer")]
         public async Task<IActionResult> GetOrganizerByEvent(int eventId)
         {
-                var ev = await apiAppDbContext.Events
-                .Include(e => e.Organizer)
-                .FirstOrDefaultAsync(e => e.Id == eventId);
-
-            if (ev == null) return NotFound("Event not found");
-            if (ev.Organizer == null) return NotFound("Organizer not found");
-            var organizerDto = mapper.Map<OrganizerReturnDto>(ev.Organizer);
-
-            return Ok(organizerDto);
+            var organizer = await eventService.GetOrganizerByEventAsync(eventId);
+            if (organizer is null) return NotFound("Not found");
+            return Ok(organizer);
         }
 
         [HttpPost("{eventId}/tickets")]
         public async Task<IActionResult> CreateTicketForEvent(int eventId, TicketCreateDto dto)
         {
-            var eventExists = await apiAppDbContext.Events.AnyAsync(e => e.Id == eventId);
-            if (!eventExists) return NotFound("Event not found");
-
-            var ticket = new Ticket
-            {
-                EventId = eventId,
-                Type = dto.Type,
-                Price = dto.Price,
-                QuantityAvailable = dto.QuantityAvailable
-            };
-
-            apiAppDbContext.Tickets.Add(ticket);
-            await apiAppDbContext.SaveChangesAsync();
-
+            var ticket = await eventService.CreateTicketForEventAsync(eventId, dto);
+            if (ticket is null) return NotFound("Event not found");
             return Ok(ticket);
         }
-
 
     }
 }

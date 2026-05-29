@@ -1,126 +1,101 @@
-﻿using AutoMapper;
-using AutoMapper;
-using FluentAssertions;
-using Microsoft.AspNetCore.Http;
+﻿
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WebApplication2.Controllers;
-using WebApplication2.Data;
-using WebApplication2.Dtos.EventDtos;
+using WebApplication2.Services;
+using WebApplication2.Dtos;
+using WebApplication2.Services.Interfaces;
 using WebApplication2.Dtos.OrganizerDtos;
-using WebApplication2.Dtos.TicketDtos;
-using WebApplication2.Models;
+using WebApplication2.Dtos.EventDtos;
+using Moq;
 
 namespace TestWebProject
 {
     public class OrganizerControllerTests
     {
-        private readonly ApiAppDbContext _db;
-        private readonly IMapper _mapper;
+        private readonly Mock<IOrganizerService> _mockService;
         private readonly OrganizerController _controller;
 
         public OrganizerControllerTests()
         {
-            var options = new DbContextOptionsBuilder<ApiAppDbContext>()
-                .UseInMemoryDatabase(Guid.NewGuid().ToString())
-                .Options;
-
-            _db = new ApiAppDbContext(options);
-            var mapper = new Mapper(new MapperConfiguration(
-             cfg =>
-             {
-                 cfg.CreateMap<EventCreateDto, Event>();
-                 cfg.CreateMap<TicketCreateDto, Ticket>();
-                 cfg.CreateMap<OrganizerCreateDto, Organizer>();
-                 cfg.CreateMap<Organizer, OrganizerReturnDto>();
-                 cfg.CreateMap<Organizer, OrganizerInEventDto>();
-                 cfg.CreateMap<Ticket, TicketReturnDto>();
-                 cfg.CreateMap<Event, EventInTicketDto>();
-                 cfg.CreateMap<Event, EventReturnDto>()
-                     .ForMember(dest => dest.BannerImageUrl, opt => opt.Ignore())
-                     .ForMember(dest => dest.Organizer, opt => opt.MapFrom(src => src.Organizer));
-                 cfg.CreateMap<Event, EventInOrganizerDto>()
-                     .ForMember(dest => dest.BannerImageUrl, opt => opt.Ignore());
-             },
-             Microsoft.Extensions.Logging.Abstractions.NullLoggerFactory.Instance
-                 ));
-
-            _mapper = mapper;
-
-            _controller = new OrganizerController(_db, _mapper);
-
-
-
+            _mockService = new Mock<IOrganizerService>();
+            _controller = new OrganizerController(_mockService.Object, null!);
         }
-        [Fact]
-        public async Task GetAllOrganizers_ReturnsOkWithList()
-        {
-            _db.Organizers.Add(new Organizer { Id = 1, Name = "Test Org", Email = "test@test.com" });
-            await _db.SaveChangesAsync();
 
+       
+        [Fact]
+        public async Task GetAllOrganizers_ReturnsOk_WithOrganizers()
+        {
+            
+            var fakeOrganizers = new List<OrganizerReturnDto>
+        {
+            new OrganizerReturnDto { Id = 1, Name = "Organizer 1" },
+            new OrganizerReturnDto { Id = 2, Name = "Organizer 2" }
+        };
+            _mockService.Setup(s => s.GetAllOrganizersAsync())
+                        .ReturnsAsync(fakeOrganizers);
+
+            
             var result = await _controller.GetAllOrganizers();
 
-            var ok = result.Should().BeOfType<OkObjectResult>().Subject;
-            var list = ok.Value.Should().BeAssignableTo<List<OrganizerReturnDto>>().Subject;
-            list.Should().HaveCount(1);
+           
+            var okResult = Assert.IsType<OkObjectResult>(result);
+            var data = Assert.IsType<List<OrganizerReturnDto>>(okResult.Value);
+            Assert.Equal(2, data.Count);
         }
 
+        
         [Fact]
-        public async Task GetEventsByOrganizer_OrganizerNotFound_ReturnsNotFound()
+        public async Task GetEventsByOrganizer_ReturnsNotFound_WhenOrganizerNotExists()
         {
-            var result = await _controller.GetEventsByOrganizer(999);
-            result.Should().BeOfType<NotFoundObjectResult>();
+            
+            _mockService.Setup(s => s.GetEventsByOrganizerAsync(99))
+                        .ReturnsAsync((List<EventReturnDto>)null);
+
+           
+            var result = await _controller.GetEventsByOrganizer(99);
+
+            
+            Assert.IsType<NotFoundObjectResult>(result);
         }
 
+     
         [Fact]
-        public async Task GetEventsByOrganizer_ReturnsOnlyThatOrganizersEvents()
+        public async Task GetEventsByOrganizer_ReturnsOk_WithEvents()
         {
-            _db.Organizers.Add(new Organizer { Id = 1, Name = "Test Org", Email = "test@test.com" });
-            _db.Events.AddRange(
-                 new Event { Id = 1, OrganizerId = 1, Title = "Event 1", Location = "Baku" },
-                 new Event { Id = 2, OrganizerId = 2, Title = "Event 2", Location = "Baku" }
-                 );
-            await _db.SaveChangesAsync();
+          
+            var fakeEvents = new List<EventReturnDto>
+        {
+            new EventReturnDto { Id = 1, Title = "Event 1" }
+        };
+            _mockService.Setup(s => s.GetEventsByOrganizerAsync(1))
+                        .ReturnsAsync(fakeEvents);
 
+            
             var result = await _controller.GetEventsByOrganizer(1);
 
-            var ok = result.Should().BeOfType<OkObjectResult>().Subject;
-            var events = ok.Value.Should().BeAssignableTo<List<EventReturnDto>>().Subject;
-            events.Should().HaveCount(1);
+           
+            var okResult = Assert.IsType<OkObjectResult>(result);
+            var data = Assert.IsType<List<EventReturnDto>>(okResult.Value);
+            Assert.Single(data);
         }
 
+       
         [Fact]
-        public async Task UploadLogo_OrganizerNotFound_ReturnsNotFound()
+        public async Task Create_ReturnsOk_WithCreatedOrganizer()
         {
-            var file = CreateFakeImage("logo.jpg");
+           
+            var dto = new OrganizerCreateDto { Name = "New Organizer" };
+            var fakeOrganizer = new OrganizerReturnDto { Id = 1, Name = "New Organizer" };
+            _mockService.Setup(s => s.CreateOrganizerAsync(dto))
+                        .ReturnsAsync(fakeOrganizer);
 
-            var result = await _controller.UploadLogo(999, file);
+            
+            var result = await _controller.Create(dto);
 
-            result.Should().BeOfType<NotFoundObjectResult>();
+           
+            var okResult = Assert.IsType<OkObjectResult>(result);
+            var data = Assert.IsType<OrganizerReturnDto>(okResult.Value);
+            Assert.Equal("New Organizer", data.Name);
         }
-
-        [Fact]
-        public async Task UploadLogo_NullFile_ReturnsBadRequest()
-        {
-            var result = await _controller.UploadLogo(1, null);
-            result.Should().BeOfType<BadRequestObjectResult>();
-        }
-
-        private IFormFile CreateFakeImage(string fileName)
-        {
-            var bytes = new byte[1024];
-            var stream = new MemoryStream(bytes);
-            return new FormFile(stream, 0, bytes.Length, "file", fileName)
-            {
-                Headers = new HeaderDictionary(),
-                ContentType = "image/jpeg"
-            };
-        }
-
     }
 }

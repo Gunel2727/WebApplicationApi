@@ -12,6 +12,7 @@ using WebApplication2.Data;
 using WebApplication2.Models;
 using WebApplication2.Profiles;
 using WebApplication2.Services;
+using WebApplication2.Services.Interfaces;
 
 namespace ApiProjectPractise
 {
@@ -23,7 +24,9 @@ namespace ApiProjectPractise
             services.AddDbContext<ApiAppDbContext>(options =>
                 options.UseSqlServer(config.GetConnectionString("DefaultConnection")));
             services.AddEndpointsApiExplorer();
-
+            services.AddScoped<IOrganizerService, OrganizerService>();
+            services.AddScoped<ITicketService, TicketService>();
+            services.AddScoped<IEventService, EventService>();
             services.AddHttpContextAccessor();
             services.AddAutoMapper(opt => opt.AddProfile(new MapperProfile(new HttpContextAccessor())));
             services.AddValidatorsFromAssemblyContaining<Program>();

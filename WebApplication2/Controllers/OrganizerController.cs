@@ -7,40 +7,25 @@ using WebApplication2.Dtos.EventDtos;
 using WebApplication2.Dtos.OrganizerDtos;
 using WebApplication2.Extensions;
 using WebApplication2.Models;
+using WebApplication2.Services.Interfaces;
 
 namespace WebApplication2.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class OrganizerController(ApiAppDbContext apiAppDbContext,IMapper mapper) : ControllerBase
+    public class OrganizerController(IOrganizerService organizerService,ApiAppDbContext? apiAppDbContext) : ControllerBase
     {
         [HttpGet]
         public async Task<IActionResult> GetAllOrganizers()
         {
-            var organizers = await apiAppDbContext.Organizers
-                 .Include(o => o.Events)
-                 .ToListAsync();
-                var organizerDtos=mapper.Map<List<OrganizerReturnDto>>(organizers);
-            return Ok(organizerDtos);
+            var organizers = await organizerService.GetAllOrganizersAsync();
+            return Ok(organizers);
         }
 
         [HttpPost]
         public async Task<IActionResult> Create(OrganizerCreateDto dto)
         {
-            string? fileName = null;
-
-            if (dto.Logo != null)
-            {
-                if (!dto.Logo.IsImage()) return BadRequest("Only image files are allowed");
-                if (!dto.Logo.IsValidSize(5)) return BadRequest("File size must not exceed 5MB");
-
-                string rootPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images");
-                fileName = await dto.Logo.SaveFileAsync(rootPath);
-            }
-            var organizer = mapper.Map<Organizer>(dto);
-
-            apiAppDbContext.Organizers.Add(organizer);
-            await apiAppDbContext.SaveChangesAsync();
+            var organizer = await organizerService.CreateOrganizerAsync(dto);
             return Ok(organizer);
         }
 
@@ -75,14 +60,9 @@ namespace WebApplication2.Controllers
         [HttpGet("{organizerId}/events")]
         public async Task<IActionResult> GetEventsByOrganizer(int organizerId)
         {
-            var organizerExists = await apiAppDbContext.Organizers.AnyAsync(o => o.Id == organizerId);
-            if (!organizerExists) return NotFound("Organizer not found");
-
-            var events = await apiAppDbContext.Events
-                .Where(e => e.OrganizerId == organizerId)
-                .ToListAsync();
-            var eventDtos = mapper.Map<List<EventReturnDto>>(events);
-            return Ok(eventDtos);
+            var events = await organizerService.GetEventsByOrganizerAsync(organizerId);
+            if (events is null) return NotFound("Organizer not found");
+            return Ok(events);
         }
 
 
