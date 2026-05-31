@@ -27,6 +27,7 @@ namespace ApiProjectPractise
             services.AddScoped<IOrganizerService, OrganizerService>();
             services.AddScoped<ITicketService, TicketService>();
             services.AddScoped<IEventService, EventService>();
+            services.AddScoped<IAccountService, AccountService>();
             services.AddHttpContextAccessor();
             services.AddAutoMapper(opt => opt.AddProfile(new MapperProfile(new HttpContextAccessor())));
             services.AddValidatorsFromAssemblyContaining<Program>();

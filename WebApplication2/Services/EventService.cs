@@ -22,6 +22,7 @@ namespace WebApplication2.Services
         public async Task<EventReturnDto> CreateEventAsync(EventCreateDto dto)
         {
             var ev = mapper.Map<Event>(dto);
+            ev.Date = dto.Date ?? DateTime.UtcNow;
             db.Events.Add(ev);
             await db.SaveChangesAsync();
             return mapper.Map<EventReturnDto>(ev);

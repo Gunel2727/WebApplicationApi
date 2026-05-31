@@ -23,7 +23,7 @@ namespace WebApplication2.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post(EventCreateDto dto)
+        public async Task<IActionResult> Post([FromForm]EventCreateDto dto)
         {
             var ev = await eventService.CreateEventAsync(dto);
             return Ok(ev);

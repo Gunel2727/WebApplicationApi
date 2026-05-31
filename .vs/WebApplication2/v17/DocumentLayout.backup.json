@@ -3,68 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{BF33D930-5D93-41B7-B4B5-6FE912F5571D}|WebApplication2\\WebApplication2.csproj|c:\\users\\gunel\\onedrive\\desktop\\webapplicationapi\\webapplication2\\services\\organizerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF33D930-5D93-41B7-B4B5-6FE912F5571D}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\services\\organizerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BF33D930-5D93-41B7-B4B5-6FE912F5571D}|WebApplication2\\WebApplication2.csproj|c:\\users\\gunel\\onedrive\\desktop\\webapplicationapi\\webapplication2\\controllers\\organizercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BF33D930-5D93-41B7-B4B5-6FE912F5571D}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\controllers\\organizercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BF33D930-5D93-41B7-B4B5-6FE912F5571D}|WebApplication2\\WebApplication2.csproj|c:\\users\\gunel\\onedrive\\desktop\\webapplicationapi\\webapplication2\\controllers\\eventscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BF33D930-5D93-41B7-B4B5-6FE912F5571D}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\controllers\\eventscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{235CC1F9-AAC6-4E70-9CB2-80AF6F2C4FAD}|TestWebProject\\TestWebProject.csproj|c:\\users\\gunel\\onedrive\\desktop\\webapplicationapi\\testwebproject\\eventscontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{235CC1F9-AAC6-4E70-9CB2-80AF6F2C4FAD}|TestWebProject\\TestWebProject.csproj|solutionrelative:testwebproject\\eventscontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{235CC1F9-AAC6-4E70-9CB2-80AF6F2C4FAD}|TestWebProject\\TestWebProject.csproj|c:\\users\\gunel\\onedrive\\desktop\\webapplicationapi\\testwebproject\\organizercontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{235CC1F9-AAC6-4E70-9CB2-80AF6F2C4FAD}|TestWebProject\\TestWebProject.csproj|solutionrelative:testwebproject\\organizercontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{235CC1F9-AAC6-4E70-9CB2-80AF6F2C4FAD}|TestWebProject\\TestWebProject.csproj|c:\\users\\gunel\\onedrive\\desktop\\webapplicationapi\\testwebproject\\ticketcontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{235CC1F9-AAC6-4E70-9CB2-80AF6F2C4FAD}|TestWebProject\\TestWebProject.csproj|solutionrelative:testwebproject\\ticketcontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{235CC1F9-AAC6-4E70-9CB2-80AF6F2C4FAD}|TestWebProject\\TestWebProject.csproj|c:\\users\\gunel\\onedrive\\desktop\\webapplicationapi\\testwebproject\\accountcontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{235CC1F9-AAC6-4E70-9CB2-80AF6F2C4FAD}|TestWebProject\\TestWebProject.csproj|solutionrelative:testwebproject\\accountcontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BF33D930-5D93-41B7-B4B5-6FE912F5571D}|WebApplication2\\WebApplication2.csproj|c:\\users\\gunel\\onedrive\\desktop\\webapplicationapi\\webapplication2\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BF33D930-5D93-41B7-B4B5-6FE912F5571D}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BF33D930-5D93-41B7-B4B5-6FE912F5571D}|WebApplication2\\WebApplication2.csproj|c:\\users\\gunel\\onedrive\\desktop\\webapplicationapi\\webapplication2\\services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BF33D930-5D93-41B7-B4B5-6FE912F5571D}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BF33D930-5D93-41B7-B4B5-6FE912F5571D}|WebApplication2\\WebApplication2.csproj|c:\\users\\gunel\\onedrive\\desktop\\webapplicationapi\\webapplication2\\services\\interfaces\\iaccountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BF33D930-5D93-41B7-B4B5-6FE912F5571D}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\services\\interfaces\\iaccountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BF33D930-5D93-41B7-B4B5-6FE912F5571D}|WebApplication2\\WebApplication2.csproj|c:\\users\\gunel\\onedrive\\desktop\\webapplicationapi\\webapplication2\\controllers\\ticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BF33D930-5D93-41B7-B4B5-6FE912F5571D}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\controllers\\ticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BF33D930-5D93-41B7-B4B5-6FE912F5571D}|WebApplication2\\WebApplication2.csproj|c:\\users\\gunel\\onedrive\\desktop\\webapplicationapi\\webapplication2\\services\\ticketservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BF33D930-5D93-41B7-B4B5-6FE912F5571D}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\services\\ticketservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BF33D930-5D93-41B7-B4B5-6FE912F5571D}|WebApplication2\\WebApplication2.csproj|c:\\users\\gunel\\onedrive\\desktop\\webapplicationapi\\webapplication2\\models\\organizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF33D930-5D93-41B7-B4B5-6FE912F5571D}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\models\\organizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BF33D930-5D93-41B7-B4B5-6FE912F5571D}|WebApplication2\\WebApplication2.csproj|c:\\users\\gunel\\onedrive\\desktop\\webapplicationapi\\webapplication2\\services\\eventservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BF33D930-5D93-41B7-B4B5-6FE912F5571D}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\services\\eventservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BF33D930-5D93-41B7-B4B5-6FE912F5571D}|WebApplication2\\WebApplication2.csproj|c:\\users\\gunel\\onedrive\\desktop\\webapplicationapi\\webapplication2\\serviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BF33D930-5D93-41B7-B4B5-6FE912F5571D}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\serviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BF33D930-5D93-41B7-B4B5-6FE912F5571D}|WebApplication2\\WebApplication2.csproj|c:\\users\\gunel\\onedrive\\desktop\\webapplicationapi\\webapplication2\\profiles\\mapperprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF33D930-5D93-41B7-B4B5-6FE912F5571D}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\profiles\\mapperprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BF33D930-5D93-41B7-B4B5-6FE912F5571D}|WebApplication2\\WebApplication2.csproj|c:\\users\\gunel\\onedrive\\desktop\\webapplicationapi\\webapplication2\\services\\interfaces\\iticketservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BF33D930-5D93-41B7-B4B5-6FE912F5571D}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\services\\interfaces\\iticketservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BF33D930-5D93-41B7-B4B5-6FE912F5571D}|WebApplication2\\WebApplication2.csproj|c:\\users\\gunel\\onedrive\\desktop\\webapplicationapi\\webapplication2\\controllers\\eventscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF33D930-5D93-41B7-B4B5-6FE912F5571D}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\controllers\\eventscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF33D930-5D93-41B7-B4B5-6FE912F5571D}|WebApplication2\\WebApplication2.csproj|c:\\users\\gunel\\onedrive\\desktop\\webapplicationapi\\webapplication2\\dtos\\eventdtos\\eventcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF33D930-5D93-41B7-B4B5-6FE912F5571D}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\dtos\\eventdtos\\eventcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BF33D930-5D93-41B7-B4B5-6FE912F5571D}|WebApplication2\\WebApplication2.csproj|c:\\users\\gunel\\onedrive\\desktop\\webapplicationapi\\webapplication2\\services\\interfaces\\ieventservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BF33D930-5D93-41B7-B4B5-6FE912F5571D}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\services\\interfaces\\ieventservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BF33D930-5D93-41B7-B4B5-6FE912F5571D}|WebApplication2\\WebApplication2.csproj|c:\\users\\gunel\\onedrive\\desktop\\webapplicationapi\\webapplication2\\services\\interfaces\\iorganizerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BF33D930-5D93-41B7-B4B5-6FE912F5571D}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\services\\interfaces\\iorganizerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BF33D930-5D93-41B7-B4B5-6FE912F5571D}|WebApplication2\\WebApplication2.csproj|c:\\users\\gunel\\onedrive\\desktop\\webapplicationapi\\webapplication2\\services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF33D930-5D93-41B7-B4B5-6FE912F5571D}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF33D930-5D93-41B7-B4B5-6FE912F5571D}|WebApplication2\\WebApplication2.csproj|c:\\users\\gunel\\onedrive\\desktop\\webapplicationapi\\webapplication2\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF33D930-5D93-41B7-B4B5-6FE912F5571D}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -74,188 +50,89 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "EventsControllerTests.cs",
-              "DocumentMoniker": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\TestWebProject\\EventsControllerTests.cs",
-              "RelativeDocumentMoniker": "TestWebProject\\EventsControllerTests.cs",
-              "ToolTip": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\TestWebProject\\EventsControllerTests.cs",
-              "RelativeToolTip": "TestWebProject\\EventsControllerTests.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAiwIwAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-29T08:31:36.176Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "TicketControllerTests.cs",
-              "DocumentMoniker": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\TestWebProject\\TicketControllerTests.cs",
-              "RelativeDocumentMoniker": "TestWebProject\\TicketControllerTests.cs",
-              "ToolTip": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\TestWebProject\\TicketControllerTests.cs",
-              "RelativeToolTip": "TestWebProject\\TicketControllerTests.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEkAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-29T09:25:24.135Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "OrganizerControllerTests.cs",
-              "DocumentMoniker": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\TestWebProject\\OrganizerControllerTests.cs",
-              "RelativeDocumentMoniker": "TestWebProject\\OrganizerControllerTests.cs",
-              "ToolTip": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\TestWebProject\\OrganizerControllerTests.cs",
-              "RelativeToolTip": "TestWebProject\\OrganizerControllerTests.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-29T08:31:34.157Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "EventsController.cs",
-              "DocumentMoniker": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\Controllers\\EventsController.cs",
-              "RelativeDocumentMoniker": "WebApplication2\\Controllers\\EventsController.cs",
-              "ToolTip": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\Controllers\\EventsController.cs",
-              "RelativeToolTip": "WebApplication2\\Controllers\\EventsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-29T08:23:33.576Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "OrganizerController.cs",
               "DocumentMoniker": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\Controllers\\OrganizerController.cs",
               "RelativeDocumentMoniker": "WebApplication2\\Controllers\\OrganizerController.cs",
               "ToolTip": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\Controllers\\OrganizerController.cs",
               "RelativeToolTip": "WebApplication2\\Controllers\\OrganizerController.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACAAAAAAAAAAAAAAADIAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-29T08:31:13.684Z",
+              "WhenOpened": "2026-05-31T04:46:42.863Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AccountControllerTests.cs",
-              "DocumentMoniker": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\TestWebProject\\AccountControllerTests.cs",
-              "RelativeDocumentMoniker": "TestWebProject\\AccountControllerTests.cs",
-              "ToolTip": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\TestWebProject\\AccountControllerTests.cs",
-              "RelativeToolTip": "TestWebProject\\AccountControllerTests.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAANwAAAAFAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Organizer.cs",
+              "DocumentMoniker": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\Models\\Organizer.cs",
+              "RelativeDocumentMoniker": "WebApplication2\\Models\\Organizer.cs",
+              "ToolTip": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\Models\\Organizer.cs",
+              "RelativeToolTip": "WebApplication2\\Models\\Organizer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-30T18:08:39.702Z",
+              "WhenOpened": "2026-05-31T04:44:53.108Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "OrganizerService.cs",
+              "DocumentMoniker": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\Services\\OrganizerService.cs",
+              "RelativeDocumentMoniker": "WebApplication2\\Services\\OrganizerService.cs",
+              "ToolTip": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\Services\\OrganizerService.cs",
+              "RelativeToolTip": "WebApplication2\\Services\\OrganizerService.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAQwB0AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-31T04:43:12.84Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MapperProfile.cs",
+              "DocumentMoniker": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\Profiles\\MapperProfile.cs",
+              "RelativeDocumentMoniker": "WebApplication2\\Profiles\\MapperProfile.cs",
+              "ToolTip": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\Profiles\\MapperProfile.cs",
+              "RelativeToolTip": "WebApplication2\\Profiles\\MapperProfile.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-31T04:39:20.157Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "WebApplication2\\Controllers\\AccountController.cs",
-              "ToolTip": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "WebApplication2\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAGcAAAAAAAAAAAAAAA==",
+              "Title": "EventCreateDto.cs",
+              "DocumentMoniker": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\Dtos\\EventDtos\\EventCreateDto.cs",
+              "RelativeDocumentMoniker": "WebApplication2\\Dtos\\EventDtos\\EventCreateDto.cs",
+              "ToolTip": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\Dtos\\EventDtos\\EventCreateDto.cs",
+              "RelativeToolTip": "WebApplication2\\Dtos\\EventDtos\\EventCreateDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-29T09:29:19.824Z",
+              "WhenOpened": "2026-05-31T04:27:09.146Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EventsController.cs",
+              "DocumentMoniker": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\Controllers\\EventsController.cs",
+              "RelativeDocumentMoniker": "WebApplication2\\Controllers\\EventsController.cs",
+              "ToolTip": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\Controllers\\EventsController.cs",
+              "RelativeToolTip": "WebApplication2\\Controllers\\EventsController.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAAAB8AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-31T04:26:19.799Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "AccountService.cs",
-              "DocumentMoniker": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\Services\\AccountService.cs",
-              "RelativeDocumentMoniker": "WebApplication2\\Services\\AccountService.cs",
-              "ToolTip": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\Services\\AccountService.cs",
-              "RelativeToolTip": "WebApplication2\\Services\\AccountService.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwE4AAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-30T18:06:39.517Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "IAccountService.cs",
-              "DocumentMoniker": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\Services\\Interfaces\\IAccountService.cs",
-              "RelativeDocumentMoniker": "WebApplication2\\Services\\Interfaces\\IAccountService.cs",
-              "ToolTip": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\Services\\Interfaces\\IAccountService.cs",
-              "RelativeToolTip": "WebApplication2\\Services\\Interfaces\\IAccountService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-29T09:30:18.984Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "ServiceRegistration.cs",
-              "DocumentMoniker": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\ServiceRegistration.cs",
-              "RelativeDocumentMoniker": "WebApplication2\\ServiceRegistration.cs",
-              "ToolTip": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\ServiceRegistration.cs",
-              "RelativeToolTip": "WebApplication2\\ServiceRegistration.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABwAAAA+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-29T09:24:28.568Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "TicketService.cs",
-              "DocumentMoniker": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\Services\\TicketService.cs",
-              "RelativeDocumentMoniker": "WebApplication2\\Services\\TicketService.cs",
-              "ToolTip": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\Services\\TicketService.cs",
-              "RelativeToolTip": "WebApplication2\\Services\\TicketService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-29T09:23:38.306Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "ITicketService.cs",
-              "DocumentMoniker": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\Services\\Interfaces\\ITicketService.cs",
-              "RelativeDocumentMoniker": "WebApplication2\\Services\\Interfaces\\ITicketService.cs",
-              "ToolTip": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\Services\\Interfaces\\ITicketService.cs",
-              "RelativeToolTip": "WebApplication2\\Services\\Interfaces\\ITicketService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-29T09:22:38.01Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "TicketController.cs",
-              "DocumentMoniker": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\Controllers\\TicketController.cs",
-              "RelativeDocumentMoniker": "WebApplication2\\Controllers\\TicketController.cs",
-              "ToolTip": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\Controllers\\TicketController.cs",
-              "RelativeToolTip": "WebApplication2\\Controllers\\TicketController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABIAAABDAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-29T09:22:04.473Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "EventService.cs",
-              "DocumentMoniker": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\Services\\EventService.cs",
-              "RelativeDocumentMoniker": "WebApplication2\\Services\\EventService.cs",
-              "ToolTip": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\Services\\EventService.cs",
-              "RelativeToolTip": "WebApplication2\\Services\\EventService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-29T08:24:38.629Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
               "Title": "IEventService.cs",
               "DocumentMoniker": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\Services\\Interfaces\\IEventService.cs",
               "RelativeDocumentMoniker": "WebApplication2\\Services\\Interfaces\\IEventService.cs",
@@ -263,19 +140,47 @@
               "RelativeToolTip": "WebApplication2\\Services\\Interfaces\\IEventService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-29T08:23:22.495Z"
+              "WhenOpened": "2026-05-31T04:26:13.887Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "IOrganizerService.cs",
-              "DocumentMoniker": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\Services\\Interfaces\\IOrganizerService.cs",
-              "RelativeDocumentMoniker": "WebApplication2\\Services\\Interfaces\\IOrganizerService.cs",
-              "ToolTip": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\Services\\Interfaces\\IOrganizerService.cs",
-              "RelativeToolTip": "WebApplication2\\Services\\Interfaces\\IOrganizerService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "EventService.cs",
+              "DocumentMoniker": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\Services\\EventService.cs",
+              "RelativeDocumentMoniker": "WebApplication2\\Services\\EventService.cs",
+              "ToolTip": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\Services\\EventService.cs",
+              "RelativeToolTip": "WebApplication2\\Services\\EventService.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAYwCQAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-29T08:23:21.478Z"
+              "WhenOpened": "2026-05-31T04:25:51.222Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AccountService.cs",
+              "DocumentMoniker": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\Services\\AccountService.cs",
+              "RelativeDocumentMoniker": "WebApplication2\\Services\\AccountService.cs",
+              "ToolTip": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\Services\\AccountService.cs",
+              "RelativeToolTip": "WebApplication2\\Services\\AccountService.cs",
+              "ViewState": "AgIAAFgAAAAAAAAAAAAkwGsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-31T04:23:38.148Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "WebApplication2\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "WebApplication2\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAA5wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-31T04:16:24.636Z",
+              "EditorCaption": ""
             }
           ]
         }

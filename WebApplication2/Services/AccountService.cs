@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using FluentValidation;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.WebUtilities;
 using System.Security.Claims;
@@ -13,7 +14,7 @@ namespace WebApplication2.Services
     public class AccountService(
     UserManager<AppUser> userManager,
     JwtService jwtService,
-    IMapper mapper) : IAccountService
+    IMapper mapper, IValidator<RegisterDto> validator, IValidator<LoginDto> loginValidator) : IAccountService
     {
         public async Task<(bool Success, string? Error, string? ConfirmLink)> RegisterAsync(
             RegisterDto dto, Func<string, string, string?> urlGenerator)
@@ -21,6 +22,11 @@ namespace WebApplication2.Services
             var existingUser = await userManager.FindByNameAsync(dto.UserName);
             if (existingUser is not null)
                 return (false, "UserName already exists", null);
+
+            var validationResult = validator.Validate(dto);
+            if (!validationResult.IsValid)
+                return (false, validationResult.Errors.First().ErrorMessage, null);
+
 
             var user = mapper.Map<AppUser>(dto);
             var result = await userManager.CreateAsync(user, dto.Password);
@@ -37,6 +43,10 @@ namespace WebApplication2.Services
 
         public async Task<(bool Success, string? Error, string? AccessToken, string? RefreshToken)> LoginAsync(LoginDto dto)
         {
+            var validationResult = loginValidator.Validate(dto);
+            if (!validationResult.IsValid)
+                return (false, validationResult.Errors.First().ErrorMessage, null, null);
+
             var user = await userManager.FindByNameAsync(dto.UserName);
             if (user is null)
                 return (false, "Invalid username or password", null, null);
@@ -95,6 +105,10 @@ namespace WebApplication2.Services
             var result = await userManager.ResetPasswordAsync(user, decodedToken, dto.NewPassword);
             if (!result.Succeeded)
                 return (false, result.Errors.First().Description);
+
+            user.RefreshToken = null;
+            user.RefreshTokenExpiry = DateTime.UtcNow;
+            await userManager.UpdateAsync(user);
 
             return (true, null);
         }

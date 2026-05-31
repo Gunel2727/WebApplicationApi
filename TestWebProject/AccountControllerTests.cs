@@ -6,21 +6,24 @@ using System.Threading.Tasks;
 
 namespace TestWebProject
 {
-    using Moq;
+    using FluentValidation;
     using Microsoft.AspNetCore.Mvc;
+    using Moq;
     using WebApplication2.Controllers;
-    using WebApplication2.Services.Interfaces;
     using WebApplication2.Dtos;
     using WebApplication2.Dtos.UserDtos;
+    using WebApplication2.Services.Interfaces;
 
     public class AccountControllerTests
     {
         private readonly Mock<IAccountService> _mockService;
         private readonly AccountController _controller;
+        
 
         public AccountControllerTests()
         {
             _mockService = new Mock<IAccountService>();
+            
             _controller = new AccountController(_mockService.Object);
         }
 

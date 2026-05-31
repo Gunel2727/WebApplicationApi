@@ -215,51 +215,29 @@
         "tags": [
           "Events"
         ],
-        "parameters": [
-          {
-            "name": "Title",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "Description",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "Date",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-          },
-          {
-            "name": "Location",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "OrganizerId",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
         "requestBody": {
           "content": {
             "multipart/form-data": {
               "schema": {
                 "type": "object",
                 "properties": {
+                  "Title": {
+                    "type": "string"
+                  },
+                  "Description": {
+                    "type": "string"
+                  },
+                  "Date": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "Location": {
+                    "type": "string"
+                  },
+                  "OrganizerId": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
                   "Photo": {
                     "type": "string",
                     "format": "binary"
@@ -267,6 +245,21 @@
                 }
               },
               "encoding": {
+                "Title": {
+                  "style": "form"
+                },
+                "Description": {
+                  "style": "form"
+                },
+                "Date": {
+                  "style": "form"
+                },
+                "Location": {
+                  "style": "form"
+                },
+                "OrganizerId": {
+                  "style": "form"
+                },
                 "Photo": {
                   "style": "form"
                 }

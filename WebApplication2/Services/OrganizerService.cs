@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using WebApplication2.Data;
 using WebApplication2.Dtos.EventDtos;
 using WebApplication2.Dtos.OrganizerDtos;
+using WebApplication2.Extensions;
 using WebApplication2.Models;
 using WebApplication2.Services.Interfaces;
 
@@ -21,7 +22,14 @@ namespace WebApplication2.Services
         public async Task<OrganizerReturnDto> CreateOrganizerAsync(OrganizerCreateDto dto)
         {
             var organizer = mapper.Map<Organizer>(dto);
+            if (dto.Logo != null)
+            {
+                string rootPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images");
+                string fileName = await dto.Logo.SaveFileAsync(rootPath);
+                organizer.LogoUrl = $"https://localhost:7268/images/{fileName}";
+            }
             db.Organizers.Add(organizer);
+           
             await db.SaveChangesAsync();
             return mapper.Map<OrganizerReturnDto>(organizer);
         }
