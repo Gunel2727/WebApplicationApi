@@ -4,6 +4,7 @@ using WebApplication2.Data;
 using WebApplication2.Dtos.EventDtos;
 using WebApplication2.Dtos.OrganizerDtos;
 using WebApplication2.Dtos.TicketDtos;
+using WebApplication2.Extensions;
 using WebApplication2.Models;
 using WebApplication2.Services.Interfaces;
 
@@ -23,6 +24,12 @@ namespace WebApplication2.Services
         {
             var ev = mapper.Map<Event>(dto);
             ev.Date = dto.Date ?? DateTime.UtcNow;
+            if (dto.Photo != null)
+            {
+                string rootPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images");
+                string fileName = await dto.Photo.SaveFileAsync(rootPath);
+                ev.BannerImageUrl = $"{fileName}";
+            }
             db.Events.Add(ev);
             await db.SaveChangesAsync();
             return mapper.Map<EventReturnDto>(ev);
