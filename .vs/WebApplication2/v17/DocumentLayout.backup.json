@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{BF33D930-5D93-41B7-B4B5-6FE912F5571D}|WebApplication2\\WebApplication2.csproj|c:\\users\\gunel\\onedrive\\desktop\\webapplicationapi\\webapplication2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF33D930-5D93-41B7-B4B5-6FE912F5571D}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BF33D930-5D93-41B7-B4B5-6FE912F5571D}|WebApplication2\\WebApplication2.csproj|c:\\users\\gunel\\onedrive\\desktop\\webapplicationapi\\webapplication2\\controllers\\organizercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BF33D930-5D93-41B7-B4B5-6FE912F5571D}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\controllers\\organizercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BF33D930-5D93-41B7-B4B5-6FE912F5571D}|WebApplication2\\WebApplication2.csproj|c:\\users\\gunel\\onedrive\\desktop\\webapplicationapi\\webapplication2\\controllers\\ticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BF33D930-5D93-41B7-B4B5-6FE912F5571D}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\controllers\\ticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BF33D930-5D93-41B7-B4B5-6FE912F5571D}|WebApplication2\\WebApplication2.csproj|c:\\users\\gunel\\onedrive\\desktop\\webapplicationapi\\webapplication2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BF33D930-5D93-41B7-B4B5-6FE912F5571D}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BF33D930-5D93-41B7-B4B5-6FE912F5571D}|WebApplication2\\WebApplication2.csproj|c:\\users\\gunel\\onedrive\\desktop\\webapplicationapi\\webapplication2\\serviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -54,11 +54,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "OrganizerController.cs",
               "DocumentMoniker": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\Controllers\\OrganizerController.cs",
               "RelativeDocumentMoniker": "WebApplication2\\Controllers\\OrganizerController.cs",
@@ -71,7 +71,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "TicketController.cs",
               "DocumentMoniker": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\Controllers\\TicketController.cs",
               "RelativeDocumentMoniker": "WebApplication2\\Controllers\\TicketController.cs",
@@ -79,8 +79,7 @@
               "RelativeToolTip": "WebApplication2\\Controllers\\TicketController.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-31T10:25:18.537Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-31T10:25:18.537Z"
             },
             {
               "$type": "Document",
@@ -92,18 +91,17 @@
               "RelativeToolTip": "WebApplication2\\ServiceRegistration.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-31T10:24:55.624Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-31T10:24:55.624Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\Program.cs",
               "RelativeDocumentMoniker": "WebApplication2\\Program.cs",
               "ToolTip": "C:\\Users\\gunel\\OneDrive\\Desktop\\WebApplicationApi\\WebApplication2\\Program.cs",
               "RelativeToolTip": "WebApplication2\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAACcAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-31T10:24:54.25Z",
               "EditorCaption": ""
@@ -118,8 +116,7 @@
               "RelativeToolTip": "WebApplication2\\Helpers\\ResponseModelHelper.cs",
               "ViewState": "AgIAAB0AAAAAAAAAAAAgwC4AAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-31T10:23:47.359Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-31T10:23:47.359Z"
             },
             {
               "$type": "Document",
@@ -131,8 +128,7 @@
               "RelativeToolTip": "WebApplication2\\Models\\ResponseModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-31T10:23:01.924Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-31T10:23:01.924Z"
             },
             {
               "$type": "Document",
@@ -144,8 +140,7 @@
               "RelativeToolTip": "WebApplication2\\Models\\Ticket.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-31T10:22:25.058Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-31T10:22:25.058Z"
             },
             {
               "$type": "Document",
@@ -157,8 +152,7 @@
               "RelativeToolTip": "WebApplication2\\Models\\Organizer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-31T10:22:18.461Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-31T10:22:18.461Z"
             },
             {
               "$type": "Document",
@@ -170,8 +164,7 @@
               "RelativeToolTip": "WebApplication2\\Models\\Event.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-31T10:22:11.9Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-31T10:22:11.9Z"
             },
             {
               "$type": "Document",
@@ -183,8 +176,7 @@
               "RelativeToolTip": "WebApplication2\\Models\\AppUser.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-31T10:22:04.734Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-31T10:22:04.734Z"
             },
             {
               "$type": "Document",
@@ -196,8 +188,7 @@
               "RelativeToolTip": "WebApplication2\\Dtos\\EventDtos\\EventReturnDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-31T10:16:10.3Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-31T10:16:10.3Z"
             }
           ]
         }
