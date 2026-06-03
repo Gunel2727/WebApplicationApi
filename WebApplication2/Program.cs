@@ -37,4 +37,3 @@ app.MapGet("/", () => Results.Redirect("/swagger/index.html")).ExcludeFromDescri
 app.Run();
 
 
-Console.WriteLine("Hello, World!");
