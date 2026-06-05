@@ -14,7 +14,7 @@ namespace WebApplication2.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class OrganizerController(IOrganizerService organizerService,ApiAppDbContext? apiAppDbContext) : ControllerBase
+    public class OrganizerController(IOrganizerService organizerService) : ControllerBase
     {
         [HttpGet]
         public async Task<IActionResult> GetAllOrganizers()
@@ -35,34 +35,14 @@ namespace WebApplication2.Controllers
         {
             if (file == null || file.Length == 0)
                 return BadRequest(ResponseModelHelper.CreateBadRequestResponse<object>("File is required"));
-
             if (!file.IsImage())
                 return BadRequest(ResponseModelHelper.CreateBadRequestResponse<object>("Only image files are allowed"));
-
             if (!file.IsValidSize(5))
                 return BadRequest(ResponseModelHelper.CreateBadRequestResponse<object>("File size must not exceed 5MB"));
 
-            var organizer = await apiAppDbContext.Organizers.FindAsync(id);
-            if (organizer == null)
+            var result = await organizerService.UploadLogoAsync(id, file, Request.Scheme, Request.Host.ToString());
+            if (result is null)
                 return NotFound(ResponseModelHelper.CreateNotFoundResponse<object>("Organizer not found"));
-
-
-            string rootPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images");
-            if (!string.IsNullOrEmpty(organizer.LogoUrl))
-            {
-                var oldPath = Path.Combine(rootPath, organizer.LogoUrl);
-                if (System.IO.File.Exists(oldPath)) System.IO.File.Delete(oldPath);
-            }
-
-            organizer.LogoUrl = await file.SaveFileAsync(rootPath);
-            await apiAppDbContext.SaveChangesAsync();
-            var result = new
-            {
-                message = "Logo uploaded",
-                fileName = organizer.LogoUrl,
-                path = $"/images/{organizer.LogoUrl}",
-                url = $"{Request.Scheme}://{Request.Host}/images/{organizer.LogoUrl}"
-            };
 
             return Ok(ResponseModelHelper.CreateSuccessResponse(result));
         }

@@ -1,4 +1,5 @@
-﻿using WebApplication2.Dtos.EventDtos;
+﻿using WebApplication2.Dtos;
+using WebApplication2.Dtos.EventDtos;
 using WebApplication2.Dtos.OrganizerDtos;
 using WebApplication2.Dtos.TicketDtos;
 
@@ -11,5 +12,6 @@ namespace WebApplication2.Services.Interfaces
         Task<List<TicketReturnDto>> GetTicketsByEventAsync(int eventId);
         Task<OrganizerReturnDto> GetOrganizerByEventAsync(int eventId);
         Task<TicketReturnDto> CreateTicketForEventAsync(int eventId, TicketCreateDto dto);
+        Task<UploadBannerReturnDto?> UploadBannerAsync(int id, IFormFile file, string requestScheme, string requestHost);
     }
 }

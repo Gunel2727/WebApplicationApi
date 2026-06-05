@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using WebApplication2.Data;
+using WebApplication2.Dtos;
 using WebApplication2.Dtos.EventDtos;
 using WebApplication2.Dtos.OrganizerDtos;
 using WebApplication2.Dtos.TicketDtos;
@@ -68,6 +69,29 @@ namespace WebApplication2.Services
             db.Tickets.Add(ticket);
             await db.SaveChangesAsync();
             return mapper.Map<TicketReturnDto>(ticket);
+        }
+        public async Task<UploadBannerReturnDto?> UploadBannerAsync(int id, IFormFile file, string requestScheme, string requestHost)
+        {
+            var ev = await db.Events.FindAsync(id);
+            if (ev == null) return null;
+
+            string rootPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images");
+
+            if (!string.IsNullOrEmpty(ev.BannerImageUrl))
+            {
+                var oldPath = Path.Combine(rootPath, ev.BannerImageUrl);
+                if (System.IO.File.Exists(oldPath)) System.IO.File.Delete(oldPath);
+            }
+
+            ev.BannerImageUrl = await file.SaveFileAsync(rootPath);
+            await db.SaveChangesAsync();
+
+            return new UploadBannerReturnDto
+            {
+                FileName = ev.BannerImageUrl,
+                Path = $"/images/{ev.BannerImageUrl}",
+                Url = $"{requestScheme}://{requestHost}/images/{ev.BannerImageUrl}"
+            };
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using WebApplication2.Dtos.EventDtos;
+﻿using WebApplication2.Dtos;
+using WebApplication2.Dtos.EventDtos;
 using WebApplication2.Dtos.OrganizerDtos;
 
 namespace WebApplication2.Services.Interfaces
@@ -8,5 +9,6 @@ namespace WebApplication2.Services.Interfaces
         Task<List<OrganizerReturnDto>> GetAllOrganizersAsync();
         Task<OrganizerReturnDto> CreateOrganizerAsync(OrganizerCreateDto dto);
         Task<List<EventReturnDto>> GetEventsByOrganizerAsync(int organizerId);
+        Task<UploadLogoReturnDto?> UploadLogoAsync(int id, IFormFile file, string requestScheme, string requestHost);
     }
 }

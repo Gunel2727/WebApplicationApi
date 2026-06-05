@@ -1,221 +1,283 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Mvc;
+using Moq;
+using WebApplication2.Controllers;
+using WebApplication2.Dtos;
+using WebApplication2.Dtos.UserDtos;
+using WebApplication2.Services.Interfaces;
 
 namespace TestWebProject
 {
-    using FluentValidation;
-    using Microsoft.AspNetCore.Mvc;
-    using Moq;
-    using WebApplication2.Controllers;
-    using WebApplication2.Dtos;
-    using WebApplication2.Dtos.UserDtos;
-    using WebApplication2.Services.Interfaces;
-
     public class AccountControllerTests
     {
         private readonly Mock<IAccountService> _mockService;
         private readonly AccountController _controller;
-        
 
         public AccountControllerTests()
         {
             _mockService = new Mock<IAccountService>();
-            
             _controller = new AccountController(_mockService.Object);
         }
 
-        // Test 1: Register - uğurlu
+        // ================= REGISTER =================
+
         [Fact]
         public async Task Register_ReturnsOk_WhenSuccess()
         {
-            var dto = new RegisterDto { UserName = "newuser", Password = "Test123!" };
-            _mockService.Setup(s => s.RegisterAsync(dto, It.IsAny<Func<string, string, string?>>()))
-                        .ReturnsAsync((true, null, "http://confirm-link"));
+            var dto = new RegisterDto
+            {
+                UserName = "newuser",
+                Password = "Test123!"
+            };
+
+            _mockService.Setup(x => x.RegisterAsync(
+                    It.IsAny<RegisterDto>(),
+                    It.IsAny<Func<string, string, string?>>()))
+                .ReturnsAsync((true, null, "http://confirm-link"));
 
             var result = await _controller.Register(dto);
 
             Assert.IsType<OkObjectResult>(result);
         }
 
-        // Test 2: Register - username mövcuddur
         [Fact]
         public async Task Register_ReturnsBadRequest_WhenUserNameExists()
         {
-            var dto = new RegisterDto { UserName = "existinguser", Password = "Test123!" };
-            _mockService.Setup(s => s.RegisterAsync(dto, It.IsAny<Func<string, string, string?>>()))
-                        .ReturnsAsync((false, "UserName already exists", null));
+            var dto = new RegisterDto
+            {
+                UserName = "existinguser",
+                Password = "Test123!"
+            };
+
+            _mockService.Setup(x => x.RegisterAsync(
+                    It.IsAny<RegisterDto>(),
+                    It.IsAny<Func<string, string, string?>>()))
+                .ReturnsAsync((false, "UserName already exists", null));
 
             var result = await _controller.Register(dto);
 
             Assert.IsType<BadRequestObjectResult>(result);
         }
 
-        // Test 3: Login - uğurlu
+        // ================= LOGIN =================
+
         [Fact]
         public async Task Login_ReturnsOk_WhenCredentialsValid()
         {
-            var dto = new LoginDto { UserName = "testuser", Password = "Test123!" };
-            _mockService.Setup(s => s.LoginAsync(dto))
-                        .ReturnsAsync((true, null, "accessToken123", "refreshToken123"));
+            var dto = new LoginDto
+            {
+                UserName = "testuser",
+                Password = "Test123!"
+            };
+
+            _mockService.Setup(x => x.LoginAsync(It.IsAny<LoginDto>()))
+                .ReturnsAsync((true, null, "accessToken", "refreshToken"));
 
             var result = await _controller.Login(dto);
 
             Assert.IsType<OkObjectResult>(result);
         }
 
-        // Test 4: Login - yanlış şifrə
         [Fact]
         public async Task Login_ReturnsBadRequest_WhenCredentialsInvalid()
         {
-            var dto = new LoginDto { UserName = "testuser", Password = "WrongPass!" };
-            _mockService.Setup(s => s.LoginAsync(dto))
-                        .ReturnsAsync((false, "Invalid username or password", null, null));
+            var dto = new LoginDto
+            {
+                UserName = "testuser",
+                Password = "WrongPass"
+            };
+
+            _mockService.Setup(x => x.LoginAsync(It.IsAny<LoginDto>()))
+                .ReturnsAsync((false, "Invalid username or password", null, null));
 
             var result = await _controller.Login(dto);
 
             Assert.IsType<BadRequestObjectResult>(result);
         }
 
-        // Test 5: Login - email təsdiqlənməyib
         [Fact]
         public async Task Login_ReturnsBadRequest_WhenEmailNotConfirmed()
         {
-            var dto = new LoginDto { UserName = "testuser", Password = "Test123!" };
-            _mockService.Setup(s => s.LoginAsync(dto))
-                        .ReturnsAsync((false, "Please confirm your email first", null, null));
+            var dto = new LoginDto
+            {
+                UserName = "testuser",
+                Password = "Test123!"
+            };
+
+            _mockService.Setup(x => x.LoginAsync(It.IsAny<LoginDto>()))
+                .ReturnsAsync((false, "Please confirm your email first", null, null));
 
             var result = await _controller.Login(dto);
 
             Assert.IsType<BadRequestObjectResult>(result);
         }
 
-        // Test 6: ConfirmEmail - uğurlu
+        // ================= CONFIRM EMAIL =================
+
         [Fact]
         public async Task ConfirmEmail_ReturnsOk_WhenSuccess()
         {
-            _mockService.Setup(s => s.ConfirmEmailAsync("userId123", "token123"))
-                        .ReturnsAsync((true, null));
+            _mockService.Setup(x =>
+                    x.ConfirmEmailAsync(It.IsAny<string>(), It.IsAny<string>()))
+                .ReturnsAsync((true, null));
 
-            var result = await _controller.ConfirmEmail("userId123", "token123");
+            var result = await _controller.ConfirmEmail("userId", "token");
 
             Assert.IsType<OkObjectResult>(result);
         }
 
-        // Test 7: ConfirmEmail - user tapılmır
         [Fact]
         public async Task ConfirmEmail_ReturnsNotFound_WhenUserNotFound()
         {
-            _mockService.Setup(s => s.ConfirmEmailAsync("wrongId", "token123"))
-                        .ReturnsAsync((false, "User not found"));
+            _mockService.Setup(x =>
+                    x.ConfirmEmailAsync(It.IsAny<string>(), It.IsAny<string>()))
+                .ReturnsAsync((false, "User not found"));
 
-            var result = await _controller.ConfirmEmail("wrongId", "token123");
+            var result = await _controller.ConfirmEmail("userId", "token");
 
             Assert.IsType<NotFoundObjectResult>(result);
         }
 
-        // Test 8: ConfirmEmail - invalid token
         [Fact]
         public async Task ConfirmEmail_ReturnsBadRequest_WhenTokenInvalid()
         {
-            _mockService.Setup(s => s.ConfirmEmailAsync("userId123", "badToken"))
-                        .ReturnsAsync((false, "Invalid token"));
+            _mockService.Setup(x =>
+                    x.ConfirmEmailAsync(It.IsAny<string>(), It.IsAny<string>()))
+                .ReturnsAsync((false, "Invalid token"));
 
-            var result = await _controller.ConfirmEmail("userId123", "badToken");
+            var result = await _controller.ConfirmEmail("userId", "token");
 
             Assert.IsType<BadRequestObjectResult>(result);
         }
 
-        // Test 9: ForgotPassword - email mövcud deyil
+        // ================= FORGOT PASSWORD =================
+
         [Fact]
         public async Task ForgotPassword_ReturnsOk_WhenEmailNotFound()
         {
-            _mockService.Setup(s => s.ForgotPasswordAsync(
-                            "notexist@gmail.com",
-                            It.IsAny<Func<string, string, string?>>()))
-                        .ReturnsAsync((true, (string?)null));
+            _mockService.Setup(x =>
+                    x.ForgotPasswordAsync(
+                        It.IsAny<string>(),
+                        It.IsAny<Func<string, string, string?>>()))
+                .ReturnsAsync((true, (string?)null));
 
-            var result = await _controller.ForgotPassword(new ForgotPasswordDto { Email = "notexist@gmail.com" });
+            var result = await _controller.ForgotPassword(
+                new ForgotPasswordDto
+                {
+                    Email = "missing@gmail.com"
+                });
 
             Assert.IsType<OkObjectResult>(result);
         }
 
-        // Test 10: ForgotPassword - reset link qaytarır
         [Fact]
         public async Task ForgotPassword_ReturnsOk_WithResetLink()
         {
-            _mockService.Setup(s => s.ForgotPasswordAsync(
-                            "test@gmail.com",
-                            It.IsAny<Func<string, string, string?>>()))
-                        .ReturnsAsync((true, "http://reset-link"));
+            _mockService.Setup(x =>
+                    x.ForgotPasswordAsync(
+                        It.IsAny<string>(),
+                        It.IsAny<Func<string, string, string?>>()))
+                .ReturnsAsync((true, "http://reset-link"));
 
-            var result = await _controller.ForgotPassword(new ForgotPasswordDto { Email = "test@gmail.com" });
+            var result = await _controller.ForgotPassword(
+                new ForgotPasswordDto
+                {
+                    Email = "test@gmail.com"
+                });
 
-            var okResult = Assert.IsType<OkObjectResult>(result);
-            Assert.NotNull(okResult.Value);
+            Assert.IsType<OkObjectResult>(result);
         }
 
-        // Test 11: ResetPassword - uğurlu
+        // ================= RESET PASSWORD =================
+
         [Fact]
         public async Task ResetPassword_ReturnsOk_WhenSuccess()
         {
-            var dto = new ResetPasswordDto { Email = "test@gmail.com", Token = "token", NewPassword = "New123!" };
-            _mockService.Setup(s => s.ResetPasswordAsync(dto))
-                        .ReturnsAsync((true, null));
+            var dto = new ResetPasswordDto
+            {
+                Email = "test@gmail.com",
+                Token = "token",
+                NewPassword = "New123!"
+            };
+
+            _mockService.Setup(x =>
+                    x.ResetPasswordAsync(It.IsAny<ResetPasswordDto>()))
+                .ReturnsAsync((true, null));
 
             var result = await _controller.ResetPassword(dto);
 
             Assert.IsType<OkObjectResult>(result);
         }
 
-        // Test 12: ResetPassword - user tapılmır
         [Fact]
         public async Task ResetPassword_ReturnsNotFound_WhenUserNotFound()
         {
-            var dto = new ResetPasswordDto { Email = "wrong@gmail.com", Token = "token", NewPassword = "New123!" };
-            _mockService.Setup(s => s.ResetPasswordAsync(dto))
-                        .ReturnsAsync((false, "User not found"));
+            var dto = new ResetPasswordDto
+            {
+                Email = "wrong@gmail.com",
+                Token = "token",
+                NewPassword = "New123!"
+            };
+
+            _mockService.Setup(x =>
+                    x.ResetPasswordAsync(It.IsAny<ResetPasswordDto>()))
+                .ReturnsAsync((false, "User not found"));
 
             var result = await _controller.ResetPassword(dto);
 
             Assert.IsType<NotFoundObjectResult>(result);
         }
 
-        // Test 13: ResetPassword - invalid token
         [Fact]
         public async Task ResetPassword_ReturnsBadRequest_WhenTokenInvalid()
         {
-            var dto = new ResetPasswordDto { Email = "test@gmail.com", Token = "badToken", NewPassword = "New123!" };
-            _mockService.Setup(s => s.ResetPasswordAsync(dto))
-                        .ReturnsAsync((false, "Invalid token"));
+            var dto = new ResetPasswordDto
+            {
+                Email = "test@gmail.com",
+                Token = "badToken",
+                NewPassword = "New123!"
+            };
+
+            _mockService.Setup(x =>
+                    x.ResetPasswordAsync(It.IsAny<ResetPasswordDto>()))
+                .ReturnsAsync((false, "Invalid token"));
 
             var result = await _controller.ResetPassword(dto);
 
             Assert.IsType<BadRequestObjectResult>(result);
         }
 
-        // Test 14: RefreshToken - uğurlu
+        // ================= REFRESH TOKEN =================
+
         [Fact]
         public async Task RefreshToken_ReturnsOk_WhenSuccess()
         {
-            var dto = new RefreshTokenDto { AccessToken = "oldAccess", RefreshToken = "oldRefresh" };
-            _mockService.Setup(s => s.RefreshTokenAsync(dto))
-                        .ReturnsAsync((true, null, "newAccess", "newRefresh"));
+            var dto = new RefreshTokenDto
+            {
+                AccessToken = "oldAccess",
+                RefreshToken = "oldRefresh"
+            };
+
+            _mockService.Setup(x =>
+                    x.RefreshTokenAsync(It.IsAny<RefreshTokenDto>()))
+                .ReturnsAsync((true, null, "newAccess", "newRefresh"));
 
             var result = await _controller.RefreshToken(dto);
 
             Assert.IsType<OkObjectResult>(result);
         }
 
-        // Test 15: RefreshToken - invalid token
         [Fact]
         public async Task RefreshToken_ReturnsBadRequest_WhenTokenInvalid()
         {
-            var dto = new RefreshTokenDto { AccessToken = "badToken", RefreshToken = "badRefresh" };
-            _mockService.Setup(s => s.RefreshTokenAsync(dto))
-                        .ReturnsAsync((false, "Invalid or expired refresh token", null, null));
+            var dto = new RefreshTokenDto
+            {
+                AccessToken = "badAccess",
+                RefreshToken = "badRefresh"
+            };
+
+            _mockService.Setup(x =>
+                    x.RefreshTokenAsync(It.IsAny<RefreshTokenDto>()))
+                .ReturnsAsync((false, "Invalid or expired refresh token", null, null));
 
             var result = await _controller.RefreshToken(dto);
 
